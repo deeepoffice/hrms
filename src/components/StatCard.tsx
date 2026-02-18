@@ -5,12 +5,16 @@ type StatCardProps = {
   label: string;
   value: string;
   hint?: string;
+  icon?: string;
 };
 
-export function StatCard({ label, value, hint }: StatCardProps) {
+export function StatCard({ label, value, hint, icon }: StatCardProps) {
   return (
     <View style={styles.card}>
-      <Text style={styles.label}>{label}</Text>
+      <View style={styles.headerRow}>
+        <Text style={styles.label}>{label}</Text>
+        {icon ? <Text style={styles.icon}>{icon}</Text> : null}
+      </View>
       <Text style={styles.value}>{value}</Text>
       {hint ? <Text style={styles.hint}>{hint}</Text> : null}
     </View>
@@ -27,9 +31,17 @@ const styles = StyleSheet.create({
     flex: 1,
     gap: 6,
   },
+  headerRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   label: {
     color: colors.mutedText,
     fontSize: 13,
+  },
+  icon: {
+    fontSize: 18,
   },
   value: {
     color: colors.text,

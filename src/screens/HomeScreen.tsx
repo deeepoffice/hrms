@@ -15,13 +15,13 @@ export function HomeScreen({ route }: { route: HomeRoute }) {
       <Text style={styles.sub}>Company: {companyCode}</Text>
 
       <View style={styles.grid}>
-        <StatCard label="Attendance" value="96%" hint="This month" />
-        <StatCard label="Leave Balance" value="12" hint="Days available" />
+        <StatCard label="Attendance" value="96%" hint="This month" icon="🕒" />
+        <StatCard label="Leave Balance" value="12" hint="Days available" icon="🏖️" />
       </View>
 
       <View style={styles.grid}>
-        <StatCard label="Pending Approvals" value="1" hint="Timesheet" />
-        <StatCard label="Last Payslip" value="Paid" hint="Jan 2026" />
+        <StatCard label="Pending Approvals" value="1" hint="Timesheet" icon="✅" />
+        <StatCard label="Last Payslip" value="Paid" hint="Jan 2026" icon="💳" />
       </View>
     </View>
   );
